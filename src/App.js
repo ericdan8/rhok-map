@@ -1,37 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import MapComponent from './MapComponent';
+import { Marker } from "react-google-maps"
+
+import jsonData from './geoJSON';
 import './App.css';
 
-let 
-MyMapComponent = withScriptjs(withGoogleMap((props) =>
-  <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: 45, lng: -75}}
-  >
-    {props.isMarkerShown && <Marker position={{ lat: 45, lng: -75 }} />}
-  </GoogleMap>
-));
-
-
 class App extends Component {
-  // LeafletMap() {
-  //   const position = [43, -75];
-  //   return (
-  //     <Map center={position} zoom={13}>
-  //       <TileLayer
-  //         url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-  //         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  //       />
-  //       <Marker position={position}>
-  //         <Popup>
-  //           <span>A pretty CSS3 popup.<br/>Easily customizable.</span>
-  //         </Popup>
-  //       </Marker>
-  //     </Map>
-  //   );
-  // }
   render() {
+    console.log(jsonData);
     const style = {
       width: 500,
       height: 500
@@ -43,13 +20,15 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <div style={style} className='leafletContainer'>
-        <MyMapComponent
+        <MapComponent
           isMarkerShown
           googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `400px` }} />}
           mapElement={<div style={{ height: `100%` }} />}
-        />
+        >
+          {jsonData.features.map((item) => <Marker position={{ lat: item.geometry.coordinates[1], lng: item.geometry.coordinates[0] }} />)}
+        </MapComponent>
         </div>
       </div>
     );
