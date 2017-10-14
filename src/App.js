@@ -1,8 +1,30 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+
 import './App.css';
 
 class App extends Component {
+  LeafletMap() {
+    const position = [51.505, -0.09];
+    const style = {
+      width: 500,
+      height: 500
+    }
+    return (
+      <Map style={style} center={position} zoom={13}>
+        <TileLayer
+          url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        />
+        <Marker position={position}>
+          <Popup>
+            <span>A pretty CSS3 popup.<br/>Easily customizable.</span>
+          </Popup>
+        </Marker>
+      </Map>
+    );
+  }
   render() {
     return (
       <div className="App">
@@ -10,9 +32,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div>
+          {this.LeafletMap()}
+        </div>
       </div>
     );
   }
