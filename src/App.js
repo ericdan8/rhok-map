@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import MapComponent from './MapComponent';
 import { Navbar, NavItem, Row, Col, Container, Input, Icon, Card } from 'react-materialize'
 import { Marker } from "react-google-maps"
@@ -32,12 +31,37 @@ class App extends Component {
                 <Input label="Postal Code/Address" />
               </Row>
               <Row>
+                Acticity type
+                </Row>
+              <Row>
+                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='Red' />
+              </Row>
+              <Row>
+                Age group
+                </Row>
+              <Row>
                 <Input type='checkbox' label='Red' />
                 <Input type='checkbox' label='Red' />
                 <Input type='checkbox' label='Red' />
                 <Input type='checkbox' label='Red' />
               </Row>
 
+              <Row>
+                Time Range
+                </Row>
+              <Row>
+                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='Red' />
+              </Row>
+
+              <Row>
+                Language
+                </Row>
               <Row>
                 <Input type='checkbox' label='Red' />
                 <Input type='checkbox' label='Red' />
@@ -49,12 +73,12 @@ class App extends Component {
 
           </Col>
           <Col s={7} >
-      
+
             <MapComponent
               isMarkerShown
               googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
               loadingElement={<div style={{ height: `100%` }} />}
-              containerElement={<div style={{ height: `400px` }} />}
+              containerElement={<div style={{ height: `600px` }} />}
               mapElement={<div style={{ height: `100%` }} />}
             >
               {jsonData.features.map((item) => <Marker position={{ lat: item.geometry.coordinates[1], lng: item.geometry.coordinates[0] }} />)}
