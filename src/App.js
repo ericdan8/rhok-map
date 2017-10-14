@@ -7,23 +7,24 @@ import jsonData from './geoJSON';
 import './App.css';
 
 class App extends Component {
+  calculateHeight(){
+    var windowsHeight = window.innerHeight;
+    return windowsHeight;
+  }
+
   render() {
     console.log(jsonData);
-    const style = {
-      width: 500,
-      height: 500
-    }
     return (
       <div className="App">
-        <Navbar right>
-          <NavItem>Getting started</NavItem>
-          <NavItem>Components</NavItem>
-        </Navbar>
 
-        <Row>
-          <Col s={2} >
+        <Row style={{ height: `100%` }}>
+          <Col s={3}  style={{ height:this.calculateHeight()  , overflow: `scroll` }}>
 
             <Card>
+            <Row>
+                LOGO
+              </Row>
+
               <Row>
                 <Input label="Keyword search"></Input>
               </Row>
@@ -34,51 +35,51 @@ class App extends Component {
                 Acticity type
                 </Row>
               <Row>
-                <Input type='checkbox' label='Red' />
-                <Input type='checkbox' label='Red' />
-                <Input type='checkbox' label='Red' />
-                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='1' />
+                <Input type='checkbox' label='2' />
+                <Input type='checkbox' label='3' />
+                <Input type='checkbox' label='4' />
               </Row>
               <Row>
                 Age group
                 </Row>
               <Row>
-                <Input type='checkbox' label='Red' />
-                <Input type='checkbox' label='Red' />
-                <Input type='checkbox' label='Red' />
-                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='1' />
+                <Input type='checkbox' label='2' />
+                <Input type='checkbox' label='3' />
+                <Input type='checkbox' label='4' />
               </Row>
 
               <Row>
                 Time Range
                 </Row>
               <Row>
-                <Input type='checkbox' label='Red' />
-                <Input type='checkbox' label='Red' />
-                <Input type='checkbox' label='Red' />
-                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='1' />
+                <Input type='checkbox' label='2' />
+                <Input type='checkbox' label='3' />
+                <Input type='checkbox' label='4' />
               </Row>
 
               <Row>
                 Language
                 </Row>
               <Row>
-                <Input type='checkbox' label='Red' />
-                <Input type='checkbox' label='Red' />
-                <Input type='checkbox' label='Red' />
-                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='1' />
+                <Input type='checkbox' label='2' />
+                <Input type='checkbox' label='3' />
+                <Input type='checkbox' label='4' />
               </Row>
 
             </Card>
 
           </Col>
-          <Col s={7} >
+          <Col s={9} style={{ height: `100%` }}>
 
             <MapComponent
               isMarkerShown
               googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
               loadingElement={<div style={{ height: `100%` }} />}
-              containerElement={<div style={{ height: `600px` }} />}
+              containerElement={<div style={{ height: this.calculateHeight() }} />}
               mapElement={<div style={{ height: `100%` }} />}
             >
               {jsonData.features.map((item) => <Marker position={{ lat: item.geometry.coordinates[1], lng: item.geometry.coordinates[0] }} />)}
