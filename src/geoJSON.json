@@ -11,7 +11,7 @@
       "type":"Feature",
       "properties":{
         "services": ["fade"],
-        "ageGroups": ["5-9", "15-17"],
+        "ageGroups": ["5-9", "10-14", "15-17"],
         "popupContent":"<b>Location</b>: 1125 Colonel By Drive<br><b>Program</b>: Junior Ravens Baketball<br><b>Age</b>: 6-11 years old<br><b>Fee</b>: $189<br><b>Detail</b>: http://athletics.carleton.ca/camps/#modal/24/"
       }
     },
@@ -49,8 +49,8 @@
       "type":"Feature",
       "properties":{
         "services": ["fade"],
-        "ageGroups": ["5-9", "15-17"],
-        "popupContent":"<b>Location</b>: 21 Nadolny Sachs Private<br><b>Program</b>: Golden State Basketball<br><b>Age</b>: 5-9 years old<br><b>Fee</b>: $75.00 -95.00<br><b>Detail</b>: https://www.jccottawa.com/programs-services/childrenyouth/athletics/"
+        "ageGroups": ["15-17"],
+        "popupContent":"<b>Location</b>: 21 Nadolny Sachs Private<br><b>Program</b>: Golden State Basketball<br><b>Age</b>:ars old<br><b>Fee</b>: $75.00 -95.00<br><b>Detail</b>: https://www.jccottawa.com/programs-services/childrenyouth/athletics/"
       },
       "geometry":{
         "type":"Point",
@@ -69,8 +69,8 @@
         ]
       },
       "properties":{
-        "services": ["fade"],
-        "ageGroups": ["5-9", "15-17"],
+        "services": ["fade", "lineup"],
+        "ageGroups": ["10-14", "15-17"],
         "popupContent":"<b>Location</b>: 21 Nadolny Sachs Private<br><b>Program</b>: Sunday Teen Pick Up Baketball<br><b>Age</b>: 13-17 years old<br><b>Fee</b>: $Free for members<br><b>Detail</b>: https://www.jccottawa.com/programs-services/teen/teens-tweens/"
       },
       "type":"Feature"
@@ -85,14 +85,14 @@
       },
       "type":"Feature",
       "properties":{
-        "services": ["fade"],
+        "services": ["fade", "lineup"],
         "ageGroups": ["5-9", "15-17"],
         "popupContent":"<b>Location</b>: 2185 Arch Street<br><b>Program</b>: Ball Till I Fall<br><b>Age</b>: 7-14 years old<br><b>Fee</b>: $95<br><b>Detail</b>: https://www.facebook.com/BallTillIFallInc/"
       }
     },
     {
       "properties":{
-        "services": ["fade"],
+        "services": ["fade", "lineup"],
         "ageGroups": ["5-9", "15-17"],
         "popupContent":"<b>Location</b>: 175 Third Avenue<br><b>Program</b>: Shoots and Hoops Basketball League<br><b>Age</b>: 10-14 years old<br><b>Fee</b>: $96<br><b>Detail</b>: https://www.gnag.ca/"
       },

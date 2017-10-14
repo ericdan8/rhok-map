@@ -9,7 +9,6 @@ class MapWithFilterControls extends React.Component {
     super(props);
     this.state = {
       content: null,
-      fullNodes: props.nodes,
       filters: {}
     };
     props.filterGroups.forEach((item) => {
@@ -21,6 +20,8 @@ class MapWithFilterControls extends React.Component {
     this.updateFilters = this.updateFilters.bind(this);
     this.buildFilterGroup = this.buildFilterGroup.bind(this);
     this.buildMarker = this.buildMarker.bind(this);
+    this.getDisplayedNodes = this.getDisplayedNodes.bind(this);
+    this.passesFilterGroup = this.passesFilterGroup.bind(this);
   }
   buildMarker(item) {
     return <Marker 
@@ -38,11 +39,16 @@ class MapWithFilterControls extends React.Component {
       s={2}
       name={item.name}
       controls={item.filters}
-      onChange={this.updateFilters}
+      onFiltersUpdated={this.updateFilters}
     />
   }
-  updateFilters(newFilterState) {
-    console.log(newFilterState);
+  updateFilters(event) {
+    var newFilterState = Object.assign({}, this.state.filters);
+    newFilterState[event.filterGroup][event.toggled] = !this.state.filters[event.filterGroup][event.toggled]
+
+    this.setState({
+      filters: newFilterState
+    }, () => console.log(this.state.filters));
   }
   setContent(newContent) {
     this.setState({
@@ -51,6 +57,21 @@ class MapWithFilterControls extends React.Component {
   }
   getContent() {
     return <div dangerouslySetInnerHTML={this.state.content}/>
+  }
+  passesFilterGroup(node, filterGroup) {
+    const filterGroupToCheck = this.state.filters[filterGroup];
+    const keysToCheck = 
+    Object.keys(filterGroupToCheck)
+      .filter(key => filterGroupToCheck[key]);
+    return node.properties[filterGroup].some(item => keysToCheck.indexOf(item) >= 0);
+  }
+  getDisplayedNodes() {
+    var allNodes = this.props.nodes;
+    var filterGroups = Object.keys(this.state.filters);
+    
+    var displayedNodes = allNodes.filter((node) => filterGroups.every(this.passesFilterGroup.bind(this, node)));
+
+    return displayedNodes.map(this.buildMarker);
   }
   render() {
     var filterGroups = this.props.filterGroups;
@@ -67,7 +88,7 @@ class MapWithFilterControls extends React.Component {
             containerElement={<div style={{ height: `400px` }} />}
             mapElement={<div style={{ height: `100%` }} />}
           >
-            {nodes.map(this.buildMarker)}
+            {this.getDisplayedNodes()}
           </MapComponent>
         </Col>
         {this.getContent()}

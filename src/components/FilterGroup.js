@@ -4,22 +4,15 @@ import { Navbar, NavItem, Row, Col, Container, Input, Icon } from 'react-materia
 class FilterGroup extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    this.props.controls.forEach((item) => {
-      this.state[item] = true;
-    });
     this.onChange = this.onChange.bind(this);
     this.buildToggle = this.buildToggle.bind(this);
     this.getFilterState = this.getFilterState.bind(this);
   }
   onChange(event) {
-    this.setState(
-    {
-      [event.target.name]: !this.state[event.target.name]
-    }, 
-    () => this.props.onChange({
-      filterGroup: this.props.label,
-      state: this.state}));
+    this.props.onFiltersUpdated({
+      filterGroup: this.props.name,
+      toggled: event.target.name
+    });
   }
   buildToggle(item) {
     return <Input
