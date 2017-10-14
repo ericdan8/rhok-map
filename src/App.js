@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import MapComponent from './components/MapComponent';
+import MapWithFilterControls from './components/MapWithFilterControls';
+import { Navbar, NavItem, Row, Col, Container, Input, Icon } from 'react-materialize'
 import { Marker } from "react-google-maps"
 
 import jsonData from './geoJSON';
@@ -24,21 +26,17 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <div className='mapContainer'>
-        <MapComponent
-          isMarkerShown
-          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `400px` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-        >
-            {jsonData.features.map(this.buildMarker)}
-        </MapComponent>
-        </div>
+        <Navbar right>
+          <NavItem>Getting started</NavItem>
+          <NavItem>Components</NavItem>
+        </Navbar>
+        <MapWithFilterControls 
+          controls={{
+            services: ['fade', 'lineup'],
+            ageGroups: ['5-9', '10-14', '14-17']
+          }}
+          nodes={jsonData.features}
+        />
       </div>
     );
   }
