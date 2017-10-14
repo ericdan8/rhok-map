@@ -31,10 +31,10 @@ class App extends Component {
           <NavItem>Components</NavItem>
         </Navbar>
         <MapWithFilterControls 
-          controls={{
-            services: ['fade', 'lineup'],
-            ageGroups: ['5-9', '10-14', '14-17']
-          }}
+          filterGroups={[
+            {name: 'services', filters: ['fade', 'lineup']},
+            {name: 'ageGroups', filters: ['5-9', '10-14', '15-17']}
+          ]}
           nodes={jsonData.features}
         />
       </div>

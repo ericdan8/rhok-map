@@ -13,6 +13,7 @@ class MapWithFilterControls extends React.Component {
       value: 'on'
     };
     this.updateFilters = this.updateFilters.bind(this);
+    this.buildFilterGroup = this.buildFilterGroup.bind(this);
   }
   buildMarker(item) {
     return <Marker 
@@ -23,17 +24,24 @@ class MapWithFilterControls extends React.Component {
       }}
     />
   }
+  buildFilterGroup(item) {
+    return <FilterGroup 
+      style={{ background: '#2c3e50', color: '#FFF' }}
+      s={2}
+      controls={item.filters}
+      onChange={this.updateFilters}
+    />
+  }
   updateFilters(newFilterState) {
     console.log(newFilterState);
   }
   render() {
+    var filterGroups = this.props.filterGroups;
     var nodes = this.state.fullNodes;
     return (
       <Row>
-        <Col style={{ background: '#2c3e50', color: '#FFF' }} s={3} >
-          <FilterGroup controls={['fade', 'lineup']} onChange={this.updateFilters}/>
-        </Col>
-        <Col s={7} >
+        {filterGroups.map(this.buildFilterGroup)}
+        <Col s={5} >
           <MapComponent
             isMarkerShown
             googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
