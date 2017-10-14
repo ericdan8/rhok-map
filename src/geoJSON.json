@@ -1,0 +1,44 @@
+{
+  "type":"FeatureCollection",
+  "features":[
+     {
+        "properties":{
+           "popupContent":"<b>Location</b>: 175 Third Avenue<br><b>Program</b>: Boxing for teens<br><b>Age</b>: 12 years old and up<br><b>Fee</b>: $110<br><b>Detail</b>: https://www.gnag.ca/"
+        },
+        "type":"Feature",
+        "geometry":{
+           "type":"Point",
+           "coordinates":[
+              "-75.6915309616331",
+              "45.4022452"
+           ]
+        }
+     },
+     {
+        "type":"Feature",
+        "properties":{
+           "popupContent":"<b>Location</b>: 145 Spruce Street<br><b>Program</b>: Youth technical class<br><b>Age</b>: 11-17 years old<br><b>Fee</b>: $45.77 per month<br><b>Detail</b>: https://beaverboxing.ca/youth-program/"
+        },
+        "geometry":{
+           "type":"Point",
+           "coordinates":[
+              "-75.71646",
+              "45.4086465"
+           ]
+        }
+     },
+     {
+        "geometry":{
+           "type":"Point",
+           "coordinates":[
+              "-75.6707656",
+              "45.3745405"
+           ]
+        },
+        "type":"Feature",
+        "properties":{
+           "popupContent":"<b>Location</b>: 1175 Brookfield Road<br><b>Program</b>: Youth Boxing Program<br><b>Age</b>: 13-18 years old<br><b>Fee</b>: $160.00 for 10 classes<br><b>Detail</b>: https://www.finalround.ca/youth-boxing-program"
+        }
+     }
+  ]
+}
