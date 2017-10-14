@@ -8,12 +8,13 @@ class MapWithFilterControls extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      content: null,
       fullNodes: props.nodes,
-      filters: {},
-      value: 'on'
+      filters: {}
     };
     this.updateFilters = this.updateFilters.bind(this);
     this.buildFilterGroup = this.buildFilterGroup.bind(this);
+    this.buildMarker = this.buildMarker.bind(this);
   }
   buildMarker(item) {
     return <Marker 
@@ -22,18 +23,28 @@ class MapWithFilterControls extends React.Component {
         lat: Number(item.geometry.coordinates[1]),
         lng: Number(item.geometry.coordinates[0])
       }}
+      onClick={this.setContent.bind(this, item.properties.popupContent)}
     />
   }
   buildFilterGroup(item) {
     return <FilterGroup 
       style={{ background: '#2c3e50', color: '#FFF' }}
       s={2}
+      name={item.name}
       controls={item.filters}
       onChange={this.updateFilters}
     />
   }
   updateFilters(newFilterState) {
     console.log(newFilterState);
+  }
+  setContent(newContent) {
+    this.setState({
+      content: {__html: newContent}
+    })
+  }
+  getContent() {
+    return <div dangerouslySetInnerHTML={this.state.content}/>
   }
   render() {
     var filterGroups = this.props.filterGroups;
@@ -43,6 +54,7 @@ class MapWithFilterControls extends React.Component {
         {filterGroups.map(this.buildFilterGroup)}
         <Col s={5} >
           <MapComponent
+            {...this.props}
             isMarkerShown
             googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
             loadingElement={<div style={{ height: `100%` }} />}
@@ -52,6 +64,7 @@ class MapWithFilterControls extends React.Component {
             {nodes.map(this.buildMarker)}
           </MapComponent>
         </Col>
+        {this.getContent()}
       </Row>
     )
   }

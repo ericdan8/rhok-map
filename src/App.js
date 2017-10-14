@@ -31,6 +31,8 @@ class App extends Component {
           <NavItem>Components</NavItem>
         </Navbar>
         <MapWithFilterControls 
+          defaultZoom={12}
+          defaultCenter={{ lat: 45.402687, lng: -75.710524}}
           filterGroups={[
             {name: 'services', filters: ['fade', 'lineup']},
             {name: 'ageGroups', filters: ['5-9', '10-14', '15-17']}
