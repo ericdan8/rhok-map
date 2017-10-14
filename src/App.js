@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import MapComponent from './MapComponent';
-import { Navbar, NavItem, Row, Col, Container, Input, Icon } from 'react-materialize'
+import { Navbar, NavItem, Row, Col, Container, Input, Icon, Card } from 'react-materialize'
 import { Marker } from "react-google-maps"
 
 import jsonData from './geoJSON';
@@ -21,19 +21,35 @@ class App extends Component {
           <NavItem>Components</NavItem>
         </Navbar>
 
-
-
         <Row>
-          <Col style={{ background: '#2c3e50', color: '#FFF' }} s={3} >
-            <Row>
-              <Container>
-                <Input label="Keyword search"><Icon>search</Icon></Input>
-                <Input name='group1' type='checkbox' value='red' label='Red' />
-              </Container>
-            </Row>
+          <Col s={2} >
+
+            <Card>
+              <Row>
+                <Input label="Keyword search"></Input>
+              </Row>
+              <Row>
+                <Input label="Postal Code/Address" />
+              </Row>
+              <Row>
+                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='Red' />
+              </Row>
+
+              <Row>
+                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='Red' />
+                <Input type='checkbox' label='Red' />
+              </Row>
+
+            </Card>
+
           </Col>
           <Col s={7} >
-
+      
             <MapComponent
               isMarkerShown
               googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
