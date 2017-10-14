@@ -18,7 +18,7 @@ class FilterGroup extends React.Component {
       [event.target.name]: !this.state[event.target.name]
     }, 
     () => this.props.onChange({
-      filterGroup: this.props.name,
+      filterGroup: this.props.label,
       state: this.state}));
   }
   buildToggle(item) {

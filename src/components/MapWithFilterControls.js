@@ -12,6 +12,12 @@ class MapWithFilterControls extends React.Component {
       fullNodes: props.nodes,
       filters: {}
     };
+    props.filterGroups.forEach((item) => {
+      this.state.filters[item.name] = {};
+      item.filters.forEach((filter) => {
+        this.state.filters[item.name][filter] = true;
+      });
+    });
     this.updateFilters = this.updateFilters.bind(this);
     this.buildFilterGroup = this.buildFilterGroup.bind(this);
     this.buildMarker = this.buildMarker.bind(this);
