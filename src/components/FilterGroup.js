@@ -30,7 +30,12 @@ class FilterGroup extends React.Component {
     const controls = this.props.controls;
     return(
       <Col {...this.props}>
+      <Row style={{margin:0}}>
+        <b>{this.props.label}</b>
+        </Row>
+
         {controls.map(this.buildToggle)}
+        
       </Col>
     )
   }

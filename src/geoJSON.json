@@ -10,15 +10,19 @@
       },
       "type":"Feature",
       "properties":{
-        "services": ["fade"],
+        "services": ["Arts"],
         "ageGroups": ["5-9", "10-14", "15-17"],
+        "timeRange": ["Evening"],
+        "language":["English"],
         "popupContent":"<b>Location</b>: 1125 Colonel By Drive<br><b>Program</b>: Junior Ravens Baketball<br><b>Age</b>: 6-11 years old<br><b>Fee</b>: $189<br><b>Detail</b>: http://athletics.carleton.ca/camps/#modal/24/"
       }
     },
     {
       "properties":{
-        "services": ["fade"],
+        "services": ["Arts"],
         "ageGroups": ["5-9", "15-17"],
+        "timeRange": ["Evening"],
+        "language":["English"],
         "popupContent":"<b>Location</b>: 411 Dovercourt Avenue<br><b>Program</b>: Stece Nash Youth Basketball<br><b>Age</b>: 5- 7 year old<br><b>Fee</b>: $87.3<br><b>Detail</b>: https://www.dovercourt.org/enterprise/program/8231"
       },
       "type":"Feature",
@@ -40,16 +44,20 @@
       },
       "type":"Feature",
       "properties":{
-        "services": ["fade"],
+        "services": ["Sports"],
         "ageGroups": ["5-9", "15-17"],
+        "timeRange": ["Evening"],
+        "language":["English"],
         "popupContent":"<b>Location</b>: 21 Nadolny Sachs Private<br><b>Program</b>: LBA Lebron Basketball Association<br><b>Age</b>: 5-9 years old<br><b>Fee</b>: $80.00 -100.00<br><b>Detail</b>: https://www.jccottawa.com/programs-services/childrenyouth/athletics/"
       }
     },
     {
       "type":"Feature",
       "properties":{
-        "services": ["fade"],
+        "services": ["Sports"],
         "ageGroups": ["15-17"],
+        "timeRange": ["Evening"],
+        "language":["English"],
         "popupContent":"<b>Location</b>: 21 Nadolny Sachs Private<br><b>Program</b>: Golden State Basketball<br><b>Age</b>:ars old<br><b>Fee</b>: $75.00 -95.00<br><b>Detail</b>: https://www.jccottawa.com/programs-services/childrenyouth/athletics/"
       },
       "geometry":{
@@ -69,8 +77,10 @@
         ]
       },
       "properties":{
-        "services": ["fade", "lineup"],
+        "services": ["Sports", "Education"],
         "ageGroups": ["10-14", "15-17"],
+        "timeRange": ["Afternoon"],
+        "language":["English"],
         "popupContent":"<b>Location</b>: 21 Nadolny Sachs Private<br><b>Program</b>: Sunday Teen Pick Up Baketball<br><b>Age</b>: 13-17 years old<br><b>Fee</b>: $Free for members<br><b>Detail</b>: https://www.jccottawa.com/programs-services/teen/teens-tweens/"
       },
       "type":"Feature"
@@ -85,15 +95,19 @@
       },
       "type":"Feature",
       "properties":{
-        "services": ["fade", "lineup"],
+        "services": ["Sports", "Education"],
         "ageGroups": ["5-9", "15-17"],
+        "timeRange": ["Morning"],
+        "language":["French"],
         "popupContent":"<b>Location</b>: 2185 Arch Street<br><b>Program</b>: Ball Till I Fall<br><b>Age</b>: 7-14 years old<br><b>Fee</b>: $95<br><b>Detail</b>: https://www.facebook.com/BallTillIFallInc/"
       }
     },
     {
       "properties":{
-        "services": ["fade", "lineup"],
+        "services": ["Arts", "Sports"],
         "ageGroups": ["5-9", "15-17"],
+        "timeRange": ["Morning"],
+        "language":["French"],
         "popupContent":"<b>Location</b>: 175 Third Avenue<br><b>Program</b>: Shoots and Hoops Basketball League<br><b>Age</b>: 10-14 years old<br><b>Fee</b>: $96<br><b>Detail</b>: https://www.gnag.ca/"
       },
       "type":"Feature",
@@ -108,8 +122,10 @@
     {
       "type":"Feature",
       "properties":{
-        "services": ["fade"],
+        "services": ["Arts"],
         "ageGroups": ["5-9", "15-17"],
+        "timeRange": ["Evening"],
+        "language":["French"],
         "popupContent":"<b>Location</b>: 310 York Street<br><b>Program</b>: Co-ed Youth Basketball<br><b>Age</b>: 12-18 years old<br><b>Fee</b>: $free<br><b>Detail</b>: http://www.crcbv.ca/programs-and-services/youth-program/"
       },
       "geometry":{
@@ -130,16 +146,20 @@
       },
       "type":"Feature",
       "properties":{
-        "services": ["fade"],
+        "services": ["Arts"],
         "ageGroups": ["5-9", "15-17"],
+        "timeRange": ["Evening"],
+        "language":["French"],
         "popupContent":"<b>Location</b>: 1149 Gladstone Avenue<br><b>Program</b>: Open Gym basketball<br><b>Age</b>: 14 years old and up<br><b>Fee</b>: $free<br><b>Detail</b>: morrielarlow@gmail.com"
       }
     },
     {
       "type":"Feature",
       "properties":{
-        "services": ["fade"],
-        "ageGroups": ["5-9", "15-17"],
+        "services": ["Arts"],
+        "ageGroups": [ "15-17"],
+        "timeRange": ["Evening"],
+        "language":["French"],
         "popupContent":"<b>Location</b>: 2451 Riverside Drive<br><b>Program</b>: Junior Rockie Basketball League<br><b>Age</b>: 5-7 year old<br><b>Fee</b>: $150<br><b>Detail</b>: http://www.racentre.com/youth-leagues"
       },
       "geometry":{
